@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libelf.h                                           :+:      :+:    :+:   */
+/*   std.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 01:06:58 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/14 01:07:05 by ciglesia         ###   ########.fr       */
+/*   Created: 2021/06/15 15:11:58 by ciglesia          #+#    #+#             */
+/*   Updated: 2021/06/15 16:06:38 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBELF_H
-# define LIBELF_H
+#ifndef STD_H
+# define STD_H
 
+# include <sys/types.h>
 
+ssize_t		ft_read(int fd, void *buf, size_t count);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
