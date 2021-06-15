@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 01:06:58 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/15 16:08:54 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/15 20:55:04 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 # include <unistd.h>
 # include <fcntl.h>
+
+# define EI_ABIVERSION 8
 
 /*
 **	unistd:
@@ -37,5 +39,6 @@ typedef struct s_elf
 }	t_elf;
 
 int		elf_ident(t_elf *elf, char *obj);
+int		elf_header(t_elf *elf, char *obj);
 
 #endif
