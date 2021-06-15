@@ -6,14 +6,14 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 01:06:58 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/15 20:55:04 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/15 22:12:12 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBELF_H
 # define LIBELF_H
 
-# include <linux/elf.h>
+# include "elf.h"
 
 # include <unistd.h>
 # include <fcntl.h>

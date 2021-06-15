@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/15 19:54:09 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/15 22:14:48 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -61,20 +61,21 @@ E0M			=	 "\e[0m"
 #************************ MAIN COMPILATION *************************
 
 $(NAME)	:		$(OBJS)
+				@$(ECHO)
 				@ar rc $(NAME) $(OBJS)
 				@ranlib $(NAME)
-				@$(ECHO) $(BOLD) $(GREEN) '> Compiled' $(E0M)
+				@$(ECHO) $(BOLD)$(GREEN)'> Compiled'$(E0M)
 
 clean	:
 				@($(RM) $(OBJS))
 				@($(RM) $(DEPS))
-				@$(ECHO) '> Directory cleaned'
+				@$(ECHO) $(BOLD)$(RED)'> Directory cleaned'$(E0M)
 
 all		:		$(NAME)
 
 fclean	:		clean
 				@$(RM) $(NAME)
-				@$(ECHO) '> Remove executable'
+				@$(ECHO) $(BOLD)$(RED)'> Remove executable'$(E0M)
 
 re		:		fclean all
 
