@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/15 22:14:48 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/16 01:19:58 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,7 +20,7 @@ DIRSRC		=	./src/
 
 #***************** SRC ********************#
 
-SRC			=	elf_ident.c elf_header.c
+SRC			=	elf_ident.c elf_header.c elf_pheader.c
 
 #***************** DEPS *******************#
 

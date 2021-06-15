@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 13:37:49 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/15 18:15:41 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/16 00:46:04 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@
 int		elf_ident(t_elf *elf, char *obj)
 {
 	if ((elf->fd = open(obj, O_RDONLY)) < 0)
+	{
+		ft_printf_fd(2, "libelf: '%s': No such file\n", obj);
 		return (-1);
+	}
 	if (ft_read(elf->fd, elf->identifier, EI_NIDENT) < EI_NIDENT)
 	{
 		close(elf->fd);

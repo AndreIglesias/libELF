@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   elf_header.c                                       :+:      :+:    :+:   */
+/*   elf_pheader.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 19:51:47 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/16 00:47:53 by ciglesia         ###   ########.fr       */
+/*   Created: 2021/06/16 00:59:40 by ciglesia          #+#    #+#             */
+/*   Updated: 2021/06/16 01:18:45 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libelf.h"
 #include "std.h"
 
-int	elf_header(t_elf *elf, char *obj)
+int	elf_pheader(t_elf *elf, char *obj)
 {
 	if ((elf->fd = open(obj, O_RDONLY)) < 0)
 	{
@@ -22,8 +22,9 @@ int	elf_header(t_elf *elf, char *obj)
 	}
 	if (elf->class == ELFCLASS32)
 	{
-		if (ft_read(elf->fd, &elf->elf_32, sizeof(elf->elf_32))
-							< (ssize_t)sizeof(elf->elf_32))
+		if (lseek(elf->fd, elf->elf_32.e_phoff, SEEK_SET) < 0
+			&& ft_read(elf->fd, &elf->phdr_32, sizeof(elf->phdr_32))
+							< (ssize_t)sizeof(elf->phdr_32))
 		{
 			close(elf->fd);
 			return (0);
@@ -31,8 +32,9 @@ int	elf_header(t_elf *elf, char *obj)
 	}
 	else
 	{
-		if (ft_read(elf->fd, &elf->elf_64, sizeof(elf->elf_64))
-							< (ssize_t)sizeof(elf->elf_64))
+		if (lseek(elf->fd, elf->elf_64.e_phoff, SEEK_SET) < 0
+			&& ft_read(elf->fd, &elf->phdr_64, sizeof(elf->phdr_64))
+			< (ssize_t)sizeof(elf->phdr_64))
 		{
 			close(elf->fd);
 			return (0);
