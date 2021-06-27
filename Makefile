@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/27 13:55:24 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/27 14:01:20 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -37,7 +37,7 @@ ifdef FLAGS
 CFLAGS		=
 	endif
 	ifeq ($(FLAGS), debug)
-CFLAGS		=	-Wall -Wextra -Werror -ansi -pedantic -g
+CFLAGS		=	-Wall -Wextra -Werror -ansi -pedantic -g -fPIC
 	endif
 else
 CFLAGS		=	-Wall -Wextra -Werror -fPIC
