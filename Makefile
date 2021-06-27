@@ -6,13 +6,15 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/16 01:19:58 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/27 13:55:24 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		=	libelf.a
 
-INCLUDE		=	./include/
+INC			=	./include/
+
+INCLUDE		=	-I $(INC)
 
 #***************** DIR ********************#
 
@@ -56,7 +58,7 @@ E0M			=	 "\e[0m"
 
 %.o		:		../$(DIRSRC)/%.c
 				@printf $(GREEN)"Generating libelf objects... %-33.33s\r" $@
-				@$(CC) $(CFLAGS) -I $(INCLUDE) -MMD -o $@ -c $<
+				@$(CC) $(CFLAGS) $(INCLUDE) -MMD -o $@ -c $<
 
 #************************ MAIN COMPILATION *************************
 
@@ -79,6 +81,6 @@ fclean	:		clean
 
 re		:		fclean all
 
-.PHONY	:		all clean re
+.PHONY	:		all clean fclean re
 
 -include $(DEPS)
