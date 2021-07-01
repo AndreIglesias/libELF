@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 01:06:58 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/16 01:19:18 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:01:20 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 **	fcntl:
 **		open / O_RDONLY
 */
-
 
 typedef struct s_elf
 {
