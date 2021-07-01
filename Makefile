@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/27 14:01:20 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/07/01 14:46:20 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -57,7 +57,7 @@ E0M			=	 "\e[0m"
 #************************ DEPS COMPILATION *************************
 
 %.o		:		../$(DIRSRC)/%.c
-				@printf $(GREEN)"Generating libelf objects... %-33.33s\r" $@
+				@printf $(GREEN)"Generating libelf objects...        %-33.33s\r" $@
 				@$(CC) $(CFLAGS) $(INCLUDE) -MMD -o $@ -c $<
 
 #************************ MAIN COMPILATION *************************
@@ -66,18 +66,18 @@ $(NAME)	:		$(OBJS)
 				@$(ECHO)
 				@ar rc $(NAME) $(OBJS)
 				@ranlib $(NAME)
-				@$(ECHO) $(BOLD)$(GREEN)'> Compiled'$(E0M)
+				@$(ECHO) $(BOLD)$(GREEN)'> libelf library compiled'$(E0M)
 
 clean	:
 				@($(RM) $(OBJS))
 				@($(RM) $(DEPS))
-				@$(ECHO) $(BOLD)$(RED)'> Directory cleaned'$(E0M)
+				@$(ECHO) $(BOLD)$(RED)'> libelf directory       cleaned'$(E0M)
 
 all		:		$(NAME)
 
 fclean	:		clean
 				@$(RM) $(NAME)
-				@$(ECHO) $(BOLD)$(RED)'> Remove executable'$(E0M)
+				@$(ECHO) $(BOLD)$(RED)'> libelf.a               removed'$(E0M)
 
 re		:		fclean all
 
